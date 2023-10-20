@@ -1,0 +1,48 @@
+#carouselexamplefade{
+    padding-top: 500px;
+    width: 10%;
+    height: 20px;
+    display: flex;
+}
+
+h1{
+text-align: center;
+font-family: Georgia, 'Times New Roman', Times, serif;
+font-weight: 400;
+padding-top: 100px;
+display: flex;
+}
+
+nav {
+    background-color: #050953; /* Navbar background color */
+    color: burlywood(16, 8, 8); /* Text color */
+    padding: 100px; /* Padding for the entire navbar */
+    display: flex;
+}
+
+.navbar-brand {
+    font-size: 24px; /* Adjust font size of the brand/logo */
+    color: burlywood;
+    text-align: left;
+    position:relative;
+    position: left;
+    border-radius: 100px;
+     
+}
+
+.nav-link {
+    color: burlywood; /* Change link text color */
+    margin-right: 20px; /* Adjust the margin as needed */
+}
+
+/* Add hover effect for links */
+.nav-link:hover {
+    text-decoration: underline;
+}
+
+#nav flex-column{
+    padding-top: 600px;
+    padding-left: 500px;
+
+}
+

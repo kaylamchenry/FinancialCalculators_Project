@@ -6,87 +6,230 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="css/style.css">
+
     <title>Home Page</title>
 </head>
+<!-- This is the navigation section -->
 <header>
-    <h1>Welcome to My Website</h1>
-    <nav>
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
+    <nav class="navbar navbar-expand-sm" >
+      <nav id="navbar"></nav>
+        <a class="navbar-brand" href="#">c a l c u l a t e</a>
+        <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+            aria-expanded="false" aria-label="Toggle navigation"></button>  
+        <div class="collapse navbar-collapse" id="collapsibleNavId">
+            <ul class="navbar-nav me-auto mt-2 mt-lg-0">
+                <li class="nav-item">
+                <li class="nav-item mx-3">
+                    <a class="nav-link" href="#" aria-current="page">home <span class="visually-hidden"></span></a>
+                </li>
+                <li class="nav-item">
+                <li class="nav-item mx-3">
+                    <a class="nav-link" href="#">login</a>
+                </li>
+                <li class="nav-item dropdown">
+                <li class="nav-item mx-3">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">calculators</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownId">
+                        <a class="dropdown-item" href="#">Action 1</a>
+                        <a class="dropdown-item" href="#">Action 2</a>
+                    </div>
+                </li>
+            </ul>
+            <form class="d-flex my-2 my-lg-0">
+                <input class="form-control me-sm-2" type="text" placeholder="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
     </nav>
 </header>
+<!-- end of header and navigation -->
+<main>
 <body>
     <main>
+      <section>
         <div>
-            
-            <section id="" class="section-wrapper bg-transparent py-8 gutter">
-                <div class="wrapper-narrow">
-                <div
-                data-cy="" class="Headline w-full">
-                <h1 class="type-heading-one">
-                    Annual Percentage Calculator</h1>
+          <div>
+            <div class="jumbotron jumbotron-fluid">
+              <div class="container">
+                <h1 class="display-4">Mortgage Calculator</h1>
+                <p class="lead">A mortgage calculator - used to calculate out how much a monthly payment for a loan would be (minus any insurance or taxes), as well as how much interest you would pay over the life of the loan..</p>
+              </div>
             </div>
-                <div class="wysiwyg display-block w-full">
-                <p>Oct.20,2023</p></div>
-                <div class="wysiwyg display-block w-full">
-                <h2 dir="ltr">How to use Bankrate's APR loan calculator</h2>
-                <p dir="ltr">A mortgage calculator - it is used to calculate out how much a monthly payment for a loan would be (minus any insurance or taxes), as well as how much interest you would pay over the life of the loan.</p></div>
-                <div class="calculator">
-                <div id="calculator">
-                  <calculator></calculator>
-            </div>
-            </div>
-                <a href="https://www.bankrate.com/loans/personal-loans/rates/"
-                class="Button Button--secondary Button--normal w-full sm:w-auto"data-beam-element-clicked-no-delay id=""
-                data-type="button"
-                data-location="calculator rate table cta"
-                data-name=""
-                data-position="below calculator"
-                data-text="compare rates"
-                data-outcome="personal loans rate table">
-                <span class="display-flex align-items-center justify-content-center gap-x-2">
-                COMPARE RATES</span></a>
-                <div class="myFinance-widget" data-widget-id="1053c968-a1df-43b0-bb69-ecc2841736bd" id="top-funnel-content-top"></div>
-                <div class="wysiwyg display-block w-full">
-                <div>
-                   
-                    </section>
-                    </main>
-                    </div>
-                    <footer class="global-footer gutter" data-swiftype-index="false">
-                    <div class="wrapper pt-8">
-                    <h2 class="global-footer__logo-container mb-7">
-        
         </div>
+      </section>
         <section>
-            <h2>About Us</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </section>
-        <section>
-            <h2>Services</h2>
-            <ul>
-                <li>Web Design</li>
-                <li>Web Development</li>
-                <li>Search Engine Optimization</li>
-            </ul>
-        </section>
-    
-    <article>
+             <!-- form html -->
+             <br>
+            <div class="col-md-5 offset-md-1 mb-3">
+                <h1>calc 1</h1>
+                <form id="mortgage-form">
+                    <label for="loanAmount">Loan Amount ($):</label>
+                    <input type="number" id="loanAmount" required><br>
+            
+                    <label for="interestRate">Interest Rate (%):</label>
+                    <input type="number" id="interestRate" step="0.01" required><br>
+            
+                    <label for="loanTerm">Loan Term (years):</label>
+                    <input type="number" id="loanTerm" required><br>
+            
+                    <button type="button" onclick="calculateMortgage()">Calculate</button>
+                </form>
+                <!-- end form html -->
+                <br>
+                    <h2>Results</h2>
+                    <p>Monthly Payment: $<span id="monthlyPayment"></span></p>
+                    <p>Total Interest Paid: $<span id="totalInterestPaid"></span></p>
+
+                 <!-- end form html -->
+                <script>
+                    function calculateMortgage() {  // Replace with your interest // Replace with your fees
+                        const loanAmount = parseFloat(document.getElementById('loanAmount').value);
+                        const interestRate = parseFloat(document.getElementById('interestRate').value) / 100;
+                        const loanTerm = parseFloat(document.getElementById('loanTerm').value);
+                        
+                         // Replace with the number of days in your loan term
+                        const monthlyInterestRate = interestRate / 12;
+                        const numberOfPayments = loanTerm * 12;
+                        
+                        const monthlyPayment = (loanAmount * monthlyInterestRate) / (1 - Math.pow(1 + monthlyInterestRate, -numberOfPayments));
+                        const totalInterestPaid = (monthlyPayment * numberOfPayments) - loanAmount;
+                        
+                        document.getElementById('monthlyPayment').textContent = monthlyPayment.toFixed(2);
+                        document.getElementById('totalInterestPaid').textContent = totalInterestPaid.toFixed(2);
+                    }
+                </script>
+                   </script>
+                  </div>
+
+            </div>
+          </main>
+          </div>
+
+<!-- end of calculator & form html -->
+<!-- start of 2 calculator & form html -->
+<div class="col-md-5 offset-md-1 mb-3">
+    <h1>other calc</h1>
+    <form id="annuity-form">
+        <label for="monthlyPayout">Monthly Payout ($):</label>
+        <input type="number" id="monthlyPayout" required><br>
+
+        <label for="interestRate">Expected Int. Rate (%):</label>
+        <input type="number" id="interestRate" step="0.01" required><br>
+
+        <label for="yearsToPayout">Years to Payout:</label>
+        <input type="number" id="yearsToPayout" required><br>
+
+        <button type="button" onclick="calculatePresentValue()">Calculate</button>
+    </form>
+
+    <h2>Results</h2>
+    <p>Present Value of Annuity: $<span id="presentValue"></span></p>
+</div>
+
+<script>
+    function calculatePresentValue() {
+        const monthlyPayout = parseFloat(document.getElementById('monthlyPayout').value);
+        const interestRate = parseFloat(document.getElementById('interestRate').value) / 100;
+        const yearsToPayout = parseFloat(document.getElementById('yearsToPayout').value);
         
+        // Calculate the present value of the annuity formula
+        const presentValue = monthlyPayout * ((1 - Math.pow(1 + interestRate, -yearsToPayout)) / interestRate);
+        
+        document.getElementById('presentValue').textContent = presentValue.toFixed(2);
+    }
+</script>
+<br>
+        </section>
+        
+        <br>
+
+    <article>
+
             </article>
             <!-- possibly more here -->
             </main>
-        </script>
+
+</body>
+<br>
+<div class="container">
+    <main>
+      <p>
+       This will accept the principal, interest rate, and loan length from the user <br>
+       and also display the expected monthly payment and total interest paid.
+       <br>
+  </div>
+
+
+  <!-- This is the footer section -->
+<br>
+  <div class="container">
+      <footer>
+        <div class="row">
+          <div class="col-6 col-md-2 mb-3">
+            <h5>Section</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-info">Home</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-info">Features</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-info">Pricing</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-info">FAQs</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-info">About</a></li>
+            </ul>
+          </div>
+
+          <div class="col-6 col-md-2 mb-3">
+            <h5>Section</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-info">Home</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-info">Features</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-info">Pricing</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-info">FAQs</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-info">About</a></li>
+            </ul>
+          </div>
+
+          <div class="col-6 col-md-2 mb-3">
+            <h5>Section</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-info">Home</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-info">Features</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-info">Pricing</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-info">FAQs</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-info">About</a></li>
+            </ul>
+          </div>
+
+          <div class="col-md-5 offset-md-1 mb-3">
+            <form>
+              <h5>Subscribe to our newsletter</h5>
+              <p>Monthly digest of what's new and exciting from us.</p>
+              <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+                <label for="newsletter1" class="visually-hidden">Email address</label>
+                <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
+                <button class="btn btn-primary" type="button">Subscribe</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+          <p>© 2023 Company, Inc. All rights reserved.</p>
+          <ul class="list-unstyled d-flex">
+            <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"></use></svg></a></li>
+            <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"></use></svg></a></li>
+            <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"></use></svg></a></li>
+          </ul>
+        </div>
+      </footer>
+    </div>
+
+  <!-- Add your JavaScript scripts here -->
+  <script src="scripts/app.js"></script> 
+<!-- Bootstrap JavaScript Libraries -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 
-<!-- This is the footer section -->
-<footer>
-    <p>&copy; 2023 My Website</p>
-</footer>
+</html>
+
 <script type='text/javascript' src=''></script>
 <script type='text/javascript' src='https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js'></script>
 <script type='text/javascript' src='https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js'></script>
