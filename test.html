@@ -1,15 +1,47 @@
-myCartList = [200, 30, 12, 40, 20]
-total_price = 0
+<!DOCTYPE html> <html>
+<head>
+<title>Mortgage Calculator</title> </head>
 
-for item_price in myCartList:
-    total_price += item_price
+<body>
+<h1>Mortgage Calculator</h1> <label>Principal:</label>
+<input type="number" id="principal"> <label>Interest Rate:</label>
+<input type="number" id="interestRate">
+<label>Loan Length (Years):</label>
+<input type="number" id="loanLength">
+<button onclick="calculateMortgage()">Calculate</button> <div id="mortgageResult"></div>
+ 
+<script> 
+function calculateMortgage() {
+const principal = parseFloat(document.getElementById('principal').value);
+const interestRate = parseFloat(document.getElementById('interestRate').value) / 100; const loanLength = parseInt(document.getElementById('loanLength').value);
+const monthlyRate = interestRate / 12;
+const nPayments = loanLength * 12;
+const numerator = monthlyRate * Math.pow(1 + monthlyRate, nPayments); const denominator = Math.pow(1 + monthlyRate, nPayments) - 1;
+const monthlyPayment = principal * (numerator / denominator); const totalInterest = monthlyPayment * nPayments - principal;
+document.getElementById('mortgageResult').innerHTML = `Monthly Payment: $${monthlyPayment.toFixed(2)}, Total Interest: $${totalInterest.toFixed(2)}`;
 
-print("Total price of items in the cart: $" + str(total_price))
+$${monthlyPayment.toFixed(2)}, Total Interest: $${totalInterest.toFixed(2)}`; 
 
-let myCartList = [200, 30, 12, 40, 20]l.                 
-let totalPrice = 0
+<h1>Future Value Calculator</h1> <label>Deposit:</label>
+<input type="number" id="deposit"> <label>Interest Rate:</label>
+<input type="number" id="futureInterestRate"> <label>Number of Years:</label>
+<input type="number" id="futureYears">
+<button onclick="calculateFutureValue()">Calculate</button> <div id="futureValueResult"></div>
+<script> 
 
-for item_price in myCartList:
-totalPrice += item_price
 
-console.log(“Total price of items in the cart: $" + str(totalPrice));
+function calculateFutureValue() {
+const deposit = parseFloat(document.getElementById('deposit').value);
+const interestRate = parseFloat(document.getElementById('futureInterestRate').value) /
+100;
+const futureYears = parseInt(document.getElementById('futureYears').value);
+const nCompounds = 365; // Daily compounding
+const futureValue = deposit * Math.pow(1 + (interestRate / nCompounds), nCompounds * futureYears);
+const totalInterest = futureValue - deposit;
+document.getElementById('futureValueResult').innerHTML = `Future Value: $${futureValue.toFixed(2)}, Total Interest: $${totalInterest.toFixed(2)}`;
+}
+label, input, button { margin-bottom: 10px;
+}
+</script>
+</main>
+</html>

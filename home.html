@@ -13,7 +13,7 @@
 <header>
     <nav class="navbar navbar-expand-sm" >
       <nav id="navbar"></nav>
-        <a class="navbar-brand" href="#">c a l c u l a t e</a>
+        <a class="navbar-brand" href="#">c a l c u l a t o r s</a>
         <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId"
             aria-expanded="false" aria-label="Toggle navigation"></button>  
         <div class="collapse navbar-collapse" id="collapsibleNavId">
@@ -58,10 +58,10 @@
         </div>
       </section>
         <section>
-             <!-- form html -->
+             <!-- calculator form html -->
              <br>
             <div class="col-md-5 offset-md-1 mb-3">
-                <h1>calc 1</h1>
+                <h1>mortgage calculator</h1>
                 <form id="mortgage-form">
                     <label for="loanAmount">Loan Amount ($):</label>
                     <input type="number" id="loanAmount" required><br>
@@ -74,13 +74,14 @@
             
                     <button type="button" onclick="calculateMortgage()">Calculate</button>
                 </form>
+
                 <!-- end form html -->
                 <br>
                     <h2>Results</h2>
                     <p>Monthly Payment: $<span id="monthlyPayment"></span></p>
                     <p>Total Interest Paid: $<span id="totalInterestPaid"></span></p>
 
-                 <!-- end form html -->
+                 <!--2nd calculator form -->
                 <script>
                     function calculateMortgage() {  // Replace with your interest // Replace with your fees
                         const loanAmount = parseFloat(document.getElementById('loanAmount').value);
@@ -97,6 +98,7 @@
                         document.getElementById('monthlyPayment').textContent = monthlyPayment.toFixed(2);
                         document.getElementById('totalInterestPaid').textContent = totalInterestPaid.toFixed(2);
                     }
+                    <!-- end form html -->
                 </script>
                    </script>
                   </div>
@@ -108,7 +110,7 @@
 <!-- end of calculator & form html -->
 <!-- start of 2 calculator & form html -->
 <div class="col-md-5 offset-md-1 mb-3">
-    <h1>other calc</h1>
+    <h1>future  value calculator</h1>
     <form id="annuity-form">
         <label for="monthlyPayout">Monthly Payout ($):</label>
         <input type="number" id="monthlyPayout" required><br>
@@ -138,19 +140,20 @@
         document.getElementById('presentValue').textContent = presentValue.toFixed(2);
     }
 </script>
+<!-- end of calculator & form html -->
 <br>
         </section>
         
         <br>
 
     <article>
-
+      
             </article>
             <!-- possibly more here -->
             </main>
 
 </body>
-<br>
+<br> <!-- little parahraph on page explaining whats happening -->
 <div class="container">
     <main>
       <p>
@@ -233,4 +236,4 @@
 <script type='text/javascript' src=''></script>
 <script type='text/javascript' src='https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js'></script>
 <script type='text/javascript' src='https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js'></script>
-</html>
+</html>  
