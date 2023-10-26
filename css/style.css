@@ -1,10 +1,11 @@
+/* style for financial mortgage calculator */
 #carouselexamplefade{
     padding-top: 500px;
     width: 10%;
     height: 20px;
     display: flex;
 }
-
+/* header customization */
 h1{
 text-align: center;
 font-family: Georgia, 'Times New Roman', Times, serif;
@@ -19,7 +20,7 @@ nav {
     padding: 100px; /* Padding for the entire navbar */
     display: flex;
 }
-
+/* nav title */
 .navbar-brand {
     font-size: 24px; /* Adjust font size of the brand/logo */
     color: burlywood;
@@ -29,13 +30,13 @@ nav {
     border-radius: 100px;
      
 }
-
+/* nav customization */
 .nav-link {
     color: burlywood; /* Change link text color */
     margin-right: 20px; /* Adjust the margin as needed */
 }
 
-/* Add hover effect for links */
+/*hover effect for links */
 .nav-link:hover {
     text-decoration: underline;
 }
@@ -45,4 +46,4 @@ nav {
     padding-left: 500px;
 
 }
-
+/* style for vacation resort */
