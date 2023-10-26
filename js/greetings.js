@@ -6,5 +6,5 @@ function init() {
    helloBtn.onclick = onHelloBtnClicked;
 }
 function onHelloBtnClicked() {
-   alert("Hi there!");
+   alert("Hello userNameHere!");
 }
